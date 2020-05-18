@@ -1,0 +1,16 @@
+### Use mysql as database server
+
+$ kubectl create deployment mydb1 --image=mysql:5.7
+
+$ kubectl set env deployments mydb1 --env=MYSQL_ROOT_PASSWORD=redhat --env=MYSQL_USER=spido --env=MYSQL_PASSWORD=redhat --env=MYSQL_DATABASE=dorkdb
+
+
+
+
+### Use wordpress-php-apache image
+
+$ kubectl create deployment mywp --image=wordpress:5.1.1-php7.3-apache
+
+$ kubectl expose deployment mywp --port=80 --type=NodePort
+
+
